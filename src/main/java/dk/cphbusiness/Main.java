@@ -1,6 +1,8 @@
 package dk.cphbusiness;
 
+import dk.cphbusiness.airport.template.Category;
 import dk.cphbusiness.airport.template.Passenger;
+import dk.cphbusiness.airport.template.Plane;
 import dk.cphbusiness.algorithm.examples.queues.PriorityQueueUsingHeap;
 
 public class Main {
@@ -10,6 +12,13 @@ public class Main {
 
        // PriorityQueueUsingHeap<Passenger> pq = new PriorityQueueUsingHeap<Passenger>();
         PriorityQueueUsingHeap<Passenger> pq = new PriorityQueueUsingHeap<Passenger>();
+
+
+        Plane p1 = new Plane(();
+        p1.getDepartureTime();
+        // yyyy-MM-dd
+        Passenger p1 = new Passenger(1, 1999-12-06, Category.Monkey, )
+
 
         pq.enqueue();
         System.out.println(pq.toString());

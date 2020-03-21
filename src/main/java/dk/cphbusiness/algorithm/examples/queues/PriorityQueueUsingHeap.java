@@ -9,8 +9,8 @@ public class PriorityQueueUsingHeap<P> implements PriorityQueue<Passenger> {
     int N;
 
 
-    public PriorityQueueUsingHeap(int capacity){
-        arr = (Passenger []) new Comparable[capacity];
+    public PriorityQueueUsingHeap(){
+        arr = (Passenger []) new Comparable[2];
       //  N = 0;
     }
 
