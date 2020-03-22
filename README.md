@@ -1,5 +1,3 @@
-Find API [here](https://rawgit.com/cphbus-algorithms/airport-template/master/target/site/apidocs/index.html)
-
- 1. Create a priority queue instead of the `NotPrioritisingPassengerArrayQueue` used now
- 2. Experiment with other values for producer and consumer
- 3. Try to add more than one consumer
+# Airport priority queue
+We have used the heap priority queue that is exactly O log N for enqueue() and
+dequeue(), which was required in the task.
