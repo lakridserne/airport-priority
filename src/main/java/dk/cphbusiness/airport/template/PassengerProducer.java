@@ -1,7 +1,7 @@
 package dk.cphbusiness.airport.template;
 
 import dk.cphbusiness.algorithm.examples.queues.PriorityQueue;
-import java.util.ArrayList;
+
 import java.util.List;
 import java.util.Random;
 

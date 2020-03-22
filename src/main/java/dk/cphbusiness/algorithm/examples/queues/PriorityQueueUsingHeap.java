@@ -3,15 +3,16 @@ package dk.cphbusiness.algorithm.examples.queues;
 
 import dk.cphbusiness.airport.template.Passenger;
 
-public class PriorityQueueUsingHeap<P> implements PriorityQueue<Passenger> {
+public class PriorityQueueUsingHeap<T extends Comparable<T>> {
 
-    Passenger[] arr;
-    int N;
+    T[] arr;
+    int N = 0;
 
 
-    public PriorityQueueUsingHeap(){
-        arr = (Passenger []) new Comparable[2];
-      //  N = 0;
+    public PriorityQueueUsingHeap(int maxN){
+       // arr = (T []) new Comparable[2];
+        arr = (T[]) new Comparable[maxN + 1];
+
     }
 
 
@@ -28,7 +29,7 @@ public class PriorityQueueUsingHeap<P> implements PriorityQueue<Passenger> {
         return N == 0;
     }
     private void resize(int capacity){
-        Passenger[] copy = (Passenger []) new Comparable[capacity];
+        T[] copy = (T []) new Comparable[capacity];
         for(int i = 1; i <= N; i ++ )
             copy[i] = arr[i];
         arr = copy;
@@ -58,23 +59,24 @@ public class PriorityQueueUsingHeap<P> implements PriorityQueue<Passenger> {
     }
 
     private void exch(int i, int j){
-        Passenger temp = arr[i];
+        T temp = arr[i];
         arr[i] = arr[j];
         arr[j] = temp;
     }
 
 
-    @Override
-    public void enqueue(Passenger item) {
-        if (N == arr.length - 1) resize(2*N + 1);
+
+    public void enqueue(T item) {
+        if (N == arr.length - 1)
+            resize(2*N + 1);
         arr[++N] = item;
         swim(N);
     }
 
-    @Override
-    public Passenger dequeue() {
+
+    public T dequeue() {
         if (isEmpty()) return null;
-        Passenger t= arr[1];
+        T t= arr[1];
         exch(1,N--);
         arr[N+1] = null;
         sink(1);
@@ -84,8 +86,8 @@ public class PriorityQueueUsingHeap<P> implements PriorityQueue<Passenger> {
         return t;
     }
 
-    @Override
-    public Passenger peek() {
+
+    public T peek() {
         if (N== 0) {
             return null;
         }
@@ -94,7 +96,7 @@ public class PriorityQueueUsingHeap<P> implements PriorityQueue<Passenger> {
         }
     }
 
-    @Override
+
     public int size() {
         return N;
     }
